@@ -31,7 +31,7 @@
 
 // Use one of these or SDCard-based Emulation will be used
 //#define SRAM_EEPROM_EMULATION                   // Use BackSRAM-based EEPROM emulation
-//#define FLASH_EEPROM_EMULATION                  // Use Flash-based EEPROM emulation
+#define FLASH_EEPROM_EMULATION                  // Use Flash-based EEPROM emulation
 
 //
 // Servos
@@ -41,12 +41,15 @@
 //
 // Limit Switches
 //
-#define X_MIN_PIN                           PB10
-#define X_MAX_PIN                           PE15
-#define Y_MIN_PIN                           PE12
-#define Y_MAX_PIN                           PE10
-#define Z_MIN_PIN                           PG8
-#define Z_MAX_PIN                           PG5
+#define X_MIN_PIN          PB10
+//#define X_MAX_PIN          PE15
+#define Y_MIN_PIN          PE12
+//#define Y_MAX_PIN          PE10
+#define Z_MIN_PIN          PG8
+#define Z_MAX_PIN          PG5
+//Filament runout
+#define FIL_RUNOUT_PIN     PE15
+#define FIL_RUNOUT2_PIN    PE10
 
 //
 // Z Probe must be this pins
@@ -162,21 +165,28 @@
 //
 // Temperature Sensors
 //
-#define TEMP_0_PIN                          PF4   // T1 <-> E0
-#define TEMP_1_PIN                          PF5   // T2 <-> E1
-#define TEMP_2_PIN                          PF6   // T3 <-> E2
-#define TEMP_BED_PIN                        PF3   // T0 <-> Bed
+#define TEMP_0_PIN         PF4  // T1 <-> E0
+#define TEMP_1_PIN         PF5  // T2 <-> E1
+//#define TEMP_2_PIN         PF6  // T3 <-> E2
+#define TEMP_CHAMBER_PIN   PF6  // T3 <-> Chamber
+#define TEMP_BED_PIN       PF3  // T0 <-> Bed
+
 
 //
 // Heaters / Fans
 //
-#define HEATER_0_PIN                        PB1   // Heater0
-#define HEATER_1_PIN                        PD14  // Heater1
-#define HEATER_2_PIN                        PB0   // Heater1
-#define HEATER_BED_PIN                      PD12  // Hotbed
-#define FAN_PIN                             PC8   // Fan0
-#define FAN1_PIN                            PE5   // Fan1
-#define FAN2_PIN                            PE6   // Fan2
+#define HEATER_0_PIN       PB1  // Heater0
+#define HEATER_1_PIN       PD14 // Heater1
+//#define HEATER_2_PIN       PB0  // Heater1
+#define HEATER_BED_PIN       PB0  // Heater1
+//#define HEATER_BED_PIN     PD12 // Hotbed
+#define HEATER_CHAMBER_PIN     PD12 // Hotbed
+#define FAN_PIN            PE6 // MCU BOARD FAN
+//#define FAN_PIN            PE5 // Part Cooling Fan
+//#define FAN_PIN            PC8  // Fan0
+//#define FAN1_PIN           PE5  // Fan1
+//#define FAN2_PIN           PE6  // MCU BOARD FAN
+#define FAN2_PIN           PE5  // Part Cooling Fan
 
 //
 // Misc. Functions
